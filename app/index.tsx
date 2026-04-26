@@ -1,10 +1,10 @@
 import { Link } from 'expo-router';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.badge}>MindLab</Text>
+    <ScrollView style={styles.screen} contentContainerStyle={styles.container}>
+      <Text style={styles.badge}>MINDLAB</Text>
 
       <Text style={styles.title}>
         Tu laboratorio personal de bienestar, equilibrio y autoconocimiento
@@ -15,9 +15,11 @@ export default function HomeScreen() {
       </Text>
 
       <View style={styles.card}>
-        <Text style={styles.cardTitle}>Un pequeño cambio puede causar una gran diferencia</Text>
+        <Text style={styles.cardTitle}>
+          Un pequeño cambio puede causar una gran diferencia
+        </Text>
         <Text style={styles.cardText}>
-          Elige tu nivel de energía y lo que quieres mejorar ahora y deja que MindLab te proponga un experimento breve.
+          Elige tu nivel de energía y lo que quieres mejorar ahora. MindLab te propondrá un experimento breve.
         </Text>
       </View>
 
@@ -34,18 +36,23 @@ export default function HomeScreen() {
       </Link>
 
       <Text style={styles.footer}>
-        No es una tarea. No es otra obligación Es un experimento.
+        No es una tarea. No es otra obligación. Es un experimento.
       </Text>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
-    padding: 28,
-    justifyContent: 'center',
     backgroundColor: '#F7F8F4',
+  },
+  container: {
+    flexGrow: 1,
+    paddingHorizontal: 28,
+    paddingTop: 64,
+    paddingBottom: 80,
+    justifyContent: 'center',
   },
   badge: {
     fontSize: 14,
